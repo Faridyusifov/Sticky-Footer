@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calc() in CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link href="footer.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header>
+        <h1>Sticky Footer</h1>
+    </header>
+    <main>
+        <h2>There is negative bottom margins on content</h2>
+       
+         <!-- Birinci yol bashlayir -->
+
+        <section>
+        
+        <pre class="code-html">
+    <span><</span>body>
+
+        <span><</span>div class="content">
+
+
+            content
+
+
+            <span><</span>class="push"><<span>/</span>div>
+
+        <span><</span>/div>
+
+        <span><</span>footer class="footer"><span><</span>/footer>
+
+    <span><</span>/body>
+        </pre>
+        <pre class="code">
+    <span class="clr-yellow">body</span>{
+        <span class="clr-blue">height </span>:<span class="clr-value"> 100% </span>;
+        <span class="clr-blue">margin </span>:<span class="clr-value"> 0 </span>;
+    }
+
+    <span class="clr-yellow">.content</span>{
+        <span class="clr-blue">min-height </span>:<span class="clr-value"> 100% </span>;
+        <span class="clr-blue">margin-bottom </span>:<span class="clr-value"> -50px </span>;
+    }
+
+    <span class="clr-yellow">.push,.footer</span>{
+        <span class="clr-blue">height </span>:<span class="clr-value"> 50px </span>;
+    }
+    </pre>
+    
+    <div class="example-1">
+        <div class="content-1">
+            The purpose of a sticky footer is that it “sticks” to the bottom of the browser window. 
+            But not always, if there is enough content on the page to push the footer lower, it still does that. 
+            But if the content on the page is short, a sticky footer will still hang to the bottom of the browser window.
+            <div class="push"></div>
+        </div>
+        <footer class="footer-1">Footer</footer>
+    </div>
+
+    </section>
+    <!-- Birinci yol qutarir -->
+     
+    <h2>There is negative top margins on footers</h2>
+
+    <!-- Ikinci yol bashlayir -->
+
+    <section>
+        <pre class="code-html">
+    <span><</span>body>
+
+        <span><</span>div class="content">
+
+          <span><</span>div class="content-inside">
+
+             content
+
+          <span><</span>/div>
+
+        <span><</span>/div>
+
+        <span><</span>footer class="footer"><span><</span>/footer>
+
+    <span><</span>/body>
+        </pre>
+        <pre class="code">
+    <span class="clr-yellow">body</span>{
+        <span class="clr-blue">height </span>:<span class="clr-value"> 100% </span>;
+        <span class="clr-blue">margin </span>:<span class="clr-value"> 0 </span>;
+    }
+        
+    <span class="clr-yellow">.content</span>{
+        <span class="clr-blue">min-height </span>:<span class="clr-value"> 100% </span>;
+    }
+        
+    <span class="clr-yellow">.content-inside</span>{
+        <span class="clr-blue">padding-bottom </span>:<span class="clr-value"> 50px </span>;
+        <span class="clr-blue">padding </span>:<span class="clr-value"> 20px </span>;
+    }
+    <span class="clr-yellow">.footer</span>{
+        <span class="clr-blue">height</span>:<span class="clr-value"> 50px </span>;
+        <span class="clr-blue">margin-top </span>:<span class="clr-value"> -50px </span>;
+    }
+        </pre>
+
+        <div class="example-2">
+            <div class="content-2">
+                <div class="content-inside">
+                    The purpose of a sticky footer is that it “sticks” to the bottom of the browser window. 
+                    But not always, if there is enough content on the page to push the footer lower, 
+                    it still does that. But if the content on the page is short, a sticky footer will 
+                    still hang to the bottom of the browser window
+                </div>
+            </div>
+            <footer class="footer-2">Footer</footer>
+        </div>
+    </section>
+    <!-- Ikinci yol qutarir -->
+    <h2>There is flexbox</h2>
+
+    <!-- Ucuncu yol bashlayir -->
+    <section>
+        <pre class="code-html">
+    <span><</span>body>
+        
+        <span><</span>div class="content">
+        
+                content
+        
+        <span><</span>/div>
+        
+        <span><</span>footer class="footer"><span><</span>/footer>
+        
+    <span><</span>/body>
+    </pre>
+
+        <pre class="code">
+    <span class="clr-yellow">body</span>{
+        <span class="clr-blue">height </span>:<span class="clr-value"> 100% </span>;
+        <span class="clr-blue">display </span>:<span class="clr-value"> flex </span>;
+        <span class="clr-blue">display-direction</span>:<span class="clr-value">column</span>;
+    }
+                
+    <span class="clr-yellow">.content</span>{
+        <span class="clr-blue">flex </span>:<span class="clr-value"> 1 0 auto </span>;
+    }
+
+    <span class="clr-yellow">.footer</span>{
+        <span class="clr-blue">flex-shrink</span>:<span class="clr-value"> 0 </span>;
+    }
+    </pre>
+
+    <div class="example-3">
+        <div class="content-3">
+            The purpose of a sticky footer is that it “sticks” to the bottom of the browser window. 
+            But not always, if there is enough content on the page to push the footer lower, 
+            it still does that. But if the content on the page is short, a sticky footer will 
+            still hang to the bottom of the browser window
+        </div>
+        <footer class="footer-3">Footer</footer>
+    </div>
+    </section>
+    </main>
+</body>
+</html>
